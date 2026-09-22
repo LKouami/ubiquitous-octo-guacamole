@@ -27,11 +27,6 @@ $ciplev_link   = function ( $slug ) {
 				<a class="btn btn--ghost" href="<?php echo esc_url( $ciplev_link( 'contact' ) ); ?>"><?php esc_html_e( 'Nous contacter', 'ciplev' ); ?></a>
 			</div>
 		</div>
-		<div class="hero__visual">
-			<div class="hero__logo-wrap">
-				<img src="<?php echo esc_url( ciplev_logo_url() ); ?>" alt="<?php esc_attr_e( 'Logo officiel du CIPLEV', 'ciplev' ); ?>" width="319" height="506">
-			</div>
-		</div>
 	</div>
 	<span class="flag-bar" aria-hidden="true"></span>
 </section>

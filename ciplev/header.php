@@ -54,10 +54,6 @@
 				?>
 			</nav>
 
-			<a class="entity-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img src="<?php echo esc_url( ciplev_logo_url() ); ?>" alt="<?php esc_attr_e( 'Logo du CIPLEV', 'ciplev' ); ?>" width="319" height="506">
-			</a>
-
 			<button class="nav-toggle" aria-expanded="false" aria-controls="menu-principal">
 				<span class="nav-toggle__open"><?php echo ciplev_icon( 'menu' ); // phpcs:ignore ?></span>
 				<span class="nav-toggle__close"><?php echo ciplev_icon( 'close' ); // phpcs:ignore ?></span>
