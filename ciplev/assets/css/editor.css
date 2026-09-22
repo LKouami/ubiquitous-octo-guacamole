@@ -1,0 +1,218 @@
+:root {
+	--blue: #0b3d91;
+	--blue-dark: #06214f;
+	--blue-soft: #e8eef9;
+	--green: #006a4e;
+	--green-soft: #e3f2ec;
+	--yellow: #ffce00;
+	--red: #d21034;
+	--ink: #1a2332;
+	--muted: #556174;
+	--line: #dde3ec;
+	--soft: #f3f5f9;
+	--white: #fff;
+
+	--font-head: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+	--font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+	--radius: 14px;
+	--radius-sm: 8px;
+	--shadow: 0 1px 2px rgba(6, 33, 79, .06), 0 8px 24px rgba(6, 33, 79, .08);
+	--container: 1200px;
+	--gutter: clamp(16px, 4vw, 32px);
+}
+body{font-family:var(--font-body);color:var(--ink);font-size:1.0625rem;line-height:1.65}
+h1,h2,h3,h4{font-family:var(--font-head);color:var(--blue-dark);line-height:1.2}
+a{color:var(--blue)}
+/* Contenu Gutenberg */
+> * + * { margin-top: 1.1em; }
+h2 {
+	font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+	margin-top: 2em;
+	padding-top: .2em;
+}
+h2::before {
+	content: "";
+	display: block;
+	width: 44px; height: 4px;
+	margin-bottom: .6em;
+	border-radius: 2px;
+	background: linear-gradient(90deg, var(--green) 0 33%, var(--yellow) 33% 66%, var(--red) 66%);
+}
+> h2:first-child, .wp-block-column > h2:first-child { margin-top: 0; }
+h3 { font-size: 1.2rem; margin-top: 1.4em; }
+.wp-block-column > h3:first-child { margin-top: 0; }
+.is-lead { font-size: 1.2rem; font-weight: 600; color: var(--ink); }
+ul { padding-left: 1.2em; }
+li + li { margin-top: .35em; }
+li::marker { color: var(--green); }
+
+.wp-block-columns { gap: clamp(24px, 4vw, 48px); margin-block: 1.5em; }
+
+.ciplev-checklist { list-style: none; padding: 0; display: grid; gap: 12px; }
+.ciplev-checklist li {
+	position: relative;
+	margin: 0;
+	padding: 14px 16px 14px 48px;
+	background: var(--soft);
+	border-radius: var(--radius-sm);
+}
+.ciplev-checklist li::before {
+	content: "";
+	position: absolute;
+	left: 16px; top: 17px;
+	width: 20px; height: 20px;
+	border-radius: 50%;
+	background: var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 5 5 9-10'/%3E%3C/svg%3E") center / 12px no-repeat;
+}
+
+.ciplev-callout {
+	padding: 22px 26px;
+	border-left: 5px solid var(--yellow);
+	background: var(--blue-soft);
+	border-radius: 0 var(--radius) var(--radius) 0;
+}
+.ciplev-callout p:last-child { margin-bottom: 0; }
+
+.ciplev-todo {
+	padding: 12px 16px;
+	background: #fff6d6;
+	border: 1px dashed #d4a800;
+	border-radius: var(--radius-sm);
+	color: #6b5200;
+	font-size: .95rem;
+}
+
+.ciplev-cards .wp-block-column {
+	padding: 26px;
+	border: 1px solid var(--line);
+	border-top: 4px solid var(--blue);
+	border-radius: var(--radius);
+	background: var(--white);
+}
+.ciplev-cards .wp-block-column:nth-child(2) { border-top-color: var(--green); }
+.ciplev-cards .wp-block-column:nth-child(3) { border-top-color: var(--red); }
+.ciplev-cards p:last-child { margin-bottom: 0; }
+
+.ciplev-intro { align-items: center; }
+.ciplev-intro .wp-block-image img { max-height: 340px; width: auto; margin: 0 auto; }
+.ciplev-intro .wp-block-column:last-child { flex-basis: 34%; }
+
+/* Personnes */
+.ciplev-people { align-items: stretch; }
+.ciplev-person {
+	height: 100%;
+	text-align: center;
+	padding: 28px 22px;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--white);
+}
+.ciplev-people .wp-block-column:first-child .ciplev-person { border-color: var(--blue); box-shadow: var(--shadow); }
+.ciplev-person .wp-block-image img {
+	width: 150px; height: 150px;
+	object-fit: cover;
+	object-position: top;
+	border-radius: 50%;
+	margin: 0 auto 16px;
+	border: 4px solid var(--white);
+	box-shadow: 0 0 0 3px var(--yellow);
+}
+.ciplev-person h3 { margin: 0 0 .2em; font-size: 1.12rem; }
+.ciplev-person__label { margin: 0 0 .4em; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green); }
+.ciplev-person__period { margin: 0; color: var(--muted); }
+
+/* Message */
+.ciplev-message .wp-block-column:first-child { flex-basis: 30%; text-align: center; }
+.ciplev-message .wp-block-image img { border-radius: var(--radius); width: 100%; object-fit: cover; aspect-ratio: 4 / 5; object-position: top; }
+.ciplev-signature { margin-top: 12px; color: var(--muted); font-size: .95rem; }
+.ciplev-signature strong { color: var(--blue-dark); }
+
+/* Tableaux */
+.wp-block-table { overflow-x: auto; }
+.wp-block-table table { width: 100%; border-collapse: collapse; font-size: .98rem; }
+.wp-block-table th {
+	background: var(--blue);
+	color: var(--white);
+	text-align: left;
+	font-family: var(--font-head);
+	font-size: .88rem;
+	padding: 12px 16px;
+	border: 0;
+}
+.wp-block-table td { padding: 12px 16px; border: 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.wp-block-table tr:nth-child(even) td { background: var(--soft); }
+.wp-block-table td:first-child { font-weight: 600; color: var(--blue-dark); }
+@media (max-width: 600px) { .wp-block-table table.has-fixed-layout { table-layout: auto; } }
+
+/* FAQ */
+.wp-block-details {
+	border: 1px solid var(--line);
+	border-radius: var(--radius-sm);
+	background: var(--white);
+	margin-top: 12px;
+	transition: border-color .2s;
+}
+.wp-block-details[open] { border-color: var(--blue); box-shadow: var(--shadow); }
+.wp-block-details summary {
+	cursor: pointer;
+	list-style: none;
+	padding: 18px 56px 18px 20px;
+	font-family: var(--font-head);
+	font-weight: 700;
+	color: var(--blue-dark);
+	position: relative;
+}
+.wp-block-details summary::-webkit-details-marker { display: none; }
+.wp-block-details summary::after {
+	content: "+";
+	position: absolute;
+	right: 18px; top: 50%;
+	transform: translateY(-50%);
+	width: 28px; height: 28px;
+	display: grid; place-items: center;
+	border-radius: 50%;
+	background: var(--blue-soft);
+	color: var(--blue);
+	font-size: 1.2rem;
+	line-height: 1;
+}
+.wp-block-details[open] summary::after { content: "−"; background: var(--blue); color: var(--white); }
+.wp-block-details > :not(summary) { margin: 0 20px 18px; }
+
+/* Organigramme */
+.org-chart { margin: 2em 0; }
+.org-chart__levels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.org-chart__box {
+	padding: 20px;
+	border-radius: var(--radius);
+	background: var(--blue);
+	color: var(--white);
+	text-align: center;
+	position: relative;
+}
+.org-chart__box:nth-child(2) { background: var(--green); }
+.org-chart__box:nth-child(3) { background: var(--red); }
+.org-chart__box::after {
+	content: "";
+	position: absolute;
+	left: 50%; bottom: -18px;
+	width: 2px; height: 18px;
+	background: var(--muted);
+}
+.org-chart span, .org-chart em { display: block; font-size: .78rem; font-style: normal; letter-spacing: .06em; text-transform: uppercase; opacity: .85; }
+.org-chart em { text-transform: none; letter-spacing: 0; margin-top: 4px; }
+.org-chart strong { display: block; font-family: var(--font-head); font-size: 1.05rem; margin-top: 4px; }
+.org-chart__liaison {
+	margin-top: 18px;
+	padding: 18px;
+	border-radius: var(--radius);
+	background: var(--yellow);
+	color: var(--blue-dark);
+	text-align: center;
+}
+@media (max-width: 700px) {
+	.org-chart__levels { grid-template-columns: 1fr; }
+	.org-chart__box::after { display: none; }
+}
+
