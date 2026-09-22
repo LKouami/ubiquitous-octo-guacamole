@@ -17,7 +17,6 @@ $ciplev_link   = function ( $slug ) {
 <section class="hero">
 	<div class="container hero__inner">
 		<div class="hero__content">
-			<p class="eyebrow eyebrow--light"><?php esc_html_e( 'République Togolaise', 'ciplev' ); ?></p>
 			<h1 class="hero__title"><?php esc_html_e( 'Comité Interministériel de Prévention et de Lutte contre l’Extrémisme Violent', 'ciplev' ); ?></h1>
 			<?php if ( $ciplev_slogan ) : ?>
 				<p class="hero__slogan"><span>CIPLEV :</span> <?php echo esc_html( $ciplev_slogan ); ?></p>
@@ -97,7 +96,7 @@ $ciplev_link   = function ( $slug ) {
 				</article>
 			<?php endforeach; ?>
 		</div>
-		<p class="section__more"><a class="btn btn--blue" href="<?php echo esc_url( $ciplev_link( 'missions-et-actions' ) ); ?>"><?php esc_html_e( 'Missions et actions', 'ciplev' ); ?> <?php echo ciplev_icon( 'arrow' ); // phpcs:ignore ?></a></p>
+		<p class="section__more"><a class="btn btn--primary" href="<?php echo esc_url( $ciplev_link( 'missions-et-actions' ) ); ?>"><?php esc_html_e( 'Missions et actions', 'ciplev' ); ?> <?php echo ciplev_icon( 'arrow' ); // phpcs:ignore ?></a></p>
 	</div>
 </section>
 
@@ -230,9 +229,9 @@ if ( $ciplev_news->have_posts() ) :
 		</div>
 		<div class="cta__actions">
 			<?php if ( ciplev_opt( 'ciplev_phone_1' ) ) : ?>
-				<a class="btn btn--yellow" href="<?php echo esc_attr( ciplev_tel_href( ciplev_opt( 'ciplev_phone_1' ) ) ); ?>"><?php echo ciplev_icon( 'phone' ); // phpcs:ignore ?> <?php echo esc_html( ciplev_opt( 'ciplev_phone_1' ) ); ?></a>
+				<a class="btn btn--primary" href="<?php echo esc_attr( ciplev_tel_href( ciplev_opt( 'ciplev_phone_1' ) ) ); ?>"><?php echo ciplev_icon( 'phone' ); // phpcs:ignore ?> <?php echo esc_html( ciplev_opt( 'ciplev_phone_1' ) ); ?></a>
 			<?php endif; ?>
-			<a class="btn btn--ghost" href="<?php echo esc_url( $ciplev_link( 'contact' ) ); ?>"><?php esc_html_e( 'Toutes nos coordonnées', 'ciplev' ); ?></a>
+			<a class="btn btn--outline" href="<?php echo esc_url( $ciplev_link( 'contact' ) ); ?>"><?php esc_html_e( 'Toutes nos coordonnées', 'ciplev' ); ?></a>
 		</div>
 	</div>
 </section>

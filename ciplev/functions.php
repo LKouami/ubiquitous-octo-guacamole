@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'CIPLEV_VERSION', '1.0.0' );
+define( 'CIPLEV_VERSION', '1.1.0' );
 define( 'CIPLEV_DIR', get_template_directory() );
 define( 'CIPLEV_URI', get_template_directory_uri() );
 
@@ -44,11 +44,11 @@ function ciplev_setup() {
 	add_theme_support(
 		'editor-color-palette',
 		array(
-			array( 'name' => 'Bleu CIPLEV', 'slug' => 'bleu', 'color' => '#0b3d91' ),
-			array( 'name' => 'Bleu nuit', 'slug' => 'bleu-nuit', 'color' => '#06214f' ),
-			array( 'name' => 'Vert Togo', 'slug' => 'vert', 'color' => '#006a4e' ),
-			array( 'name' => 'Jaune Togo', 'slug' => 'jaune', 'color' => '#ffce00' ),
-			array( 'name' => 'Rouge Togo', 'slug' => 'rouge', 'color' => '#d21034' ),
+			array( 'name' => 'Vert République', 'slug' => 'vert', 'color' => '#006a4f' ),
+			array( 'name' => 'Jaune République', 'slug' => 'jaune', 'color' => '#ffcf11' ),
+			array( 'name' => 'Rouge République', 'slug' => 'rouge', 'color' => '#d11135' ),
+			array( 'name' => 'Bleu CIPLEV (secondaire)', 'slug' => 'bleu', 'color' => '#1879c2' ),
+			array( 'name' => 'Gris ardoise (secondaire)', 'slug' => 'ardoise', 'color' => '#415e70' ),
 			array( 'name' => 'Gris clair', 'slug' => 'gris-clair', 'color' => '#f3f5f9' ),
 			array( 'name' => 'Encre', 'slug' => 'encre', 'color' => '#1a2332' ),
 		)
@@ -72,7 +72,7 @@ add_action( 'after_setup_theme', 'ciplev_setup' );
  * URL Google Fonts.
  */
 function ciplev_fonts_url() {
-	return 'https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap';
+	return 'https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,opsz,wght@1,8..60,600;1,8..60,700&display=swap';
 }
 
 /**
@@ -122,6 +122,21 @@ function ciplev_logo_url() {
 		}
 	}
 	return CIPLEV_URI . '/assets/img/logo-ciplev.png';
+}
+
+/**
+ * Bloc blason officiel (armoiries + « République Togolaise » + ministère de tutelle).
+ * Remplaçable dans Apparence › Personnaliser › Options CIPLEV › Bloc blason.
+ */
+function ciplev_blason_url() {
+	$id = (int) get_theme_mod( 'ciplev_blason' );
+	if ( $id ) {
+		$src = wp_get_attachment_image_url( $id, 'full' );
+		if ( $src ) {
+			return $src;
+		}
+	}
+	return CIPLEV_URI . '/assets/img/bloc-blason.svg';
 }
 
 /**

@@ -110,6 +110,20 @@ function ciplev_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'ciplev_hero_text', array( 'default' => $defaults['ciplev_hero_text'], 'sanitize_callback' => 'sanitize_textarea_field' ) );
 	$wp_customize->add_control( 'ciplev_hero_text', array( 'label' => __( 'Texte d’accroche de la page d’accueil', 'ciplev' ), 'section' => 'ciplev_identity', 'type' => 'textarea' ) );
 
+	$wp_customize->add_setting( 'ciplev_blason', array( 'default' => 0, 'sanitize_callback' => 'absint' ) );
+	$wp_customize->add_control(
+		new WP_Customize_Media_Control(
+			$wp_customize,
+			'ciplev_blason',
+			array(
+				'label'       => __( 'Bloc blason officiel', 'ciplev' ),
+				'description' => __( 'Fichier officiel fourni par l’État (armoiries, mention « République Togolaise », filet vert et ministère de tutelle). Ne pas modifier. Par défaut : bloc « Ministère de la Sécurité » fourni avec le thème.', 'ciplev' ),
+				'section'     => 'ciplev_identity',
+				'mime_type'   => 'image',
+			)
+		)
+	);
+
 	// Coordonnées.
 	$wp_customize->add_section( 'ciplev_contact', array( 'title' => __( 'Coordonnées', 'ciplev' ), 'panel' => 'ciplev_panel' ) );
 	$fields = array(

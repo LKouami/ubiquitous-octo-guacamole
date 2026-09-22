@@ -9,7 +9,6 @@ $ciplev_slogan = ciplev_slogan();
 </main>
 
 <footer class="site-footer">
-	<span class="flag-bar" aria-hidden="true"></span>
 	<div class="container site-footer__grid">
 		<div class="site-footer__about">
 			<a class="brand brand--light" href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -60,8 +59,11 @@ $ciplev_slogan = ciplev_slogan();
 	</div>
 
 	<div class="site-footer__bottom">
-		<div class="container">
-			<p>&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> CIPLEV — <?php esc_html_e( 'République Togolaise. Tous droits réservés.', 'ciplev' ); ?></p>
+		<div class="container site-footer__bottom-inner">
+			<p>&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> CIPLEV — <?php esc_html_e( 'Tous droits réservés.', 'ciplev' ); ?></p>
+			<a class="bloc-blason bloc-blason--footer" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<img src="<?php echo esc_url( ciplev_blason_url() ); ?>" alt="<?php esc_attr_e( 'République Togolaise — Ministère de la Sécurité', 'ciplev' ); ?>" width="620" height="708" loading="lazy">
+			</a>
 			<a href="#haut" class="to-top"><?php esc_html_e( 'Haut de page', 'ciplev' ); ?> ↑</a>
 		</div>
 	</div>
